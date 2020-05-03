@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h2 >Álbums List: </h2>
+    <h2 >Favorites albums: </h2>
     <div class="section">
       <article v-for="album in sortedAlbums" :key="album.id" class="media" v-bind:class="{'border': album.votes >= 1}">
         <figure class="media-left">
@@ -81,7 +81,7 @@ article {
 
 .section {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap:1rem;
   padding: 2rem 1.5rem;
 } 
