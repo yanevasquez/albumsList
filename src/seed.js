@@ -4,7 +4,7 @@ export const albumslist = [{
         description: 'mopTOP',
         url: '#',
         votes: 22,
-        cover: require('./assets/images/submissions/moptop.jpg')
+        cover: require('./assets/images/covers/moptop.jpg')
     },
     {
         id: 2,
@@ -12,7 +12,7 @@ export const albumslist = [{
         description: 'essa capa é um poster',
         url: '#',
         votes: 15,
-        cover: require('./assets/images/submissions/sapdl.jpg')
+        cover: require('./assets/images/covers/sapdl.jpg')
     },
     {
         id: 3,
@@ -20,7 +20,7 @@ export const albumslist = [{
         description: 'tranquilo',
         url: '#',
         votes: 14,
-        cover: require('./assets/images/submissions/donica.png')
+        cover: require('./assets/images/covers/donica.png')
     },
     {
         id: 4,
@@ -28,7 +28,7 @@ export const albumslist = [{
         description: 'indie massa',
         url: '#',
         votes: 17,
-        cover: require('./assets/images/submissions/balthazar.jpg')
+        cover: require('./assets/images/covers/balthazar.jpg')
     },
     {
         id: 5,
@@ -36,7 +36,7 @@ export const albumslist = [{
         description: 'procurei um defeito e não achei',
         url: '#',
         votes: 16,
-        cover: require('./assets/images/submissions/themarias1.jpg')
+        cover: require('./assets/images/covers/themarias1.jpg')
     },
     {
         id: 6,
@@ -44,7 +44,7 @@ export const albumslist = [{
         description: 'rainha, queridos',
         url: '#',
         votes: 23,
-        cover: require('./assets/images/submissions/madonna.jpg')
+        cover: require('./assets/images/covers/madonna.jpg')
     },
     {
         id: 7,
@@ -52,7 +52,7 @@ export const albumslist = [{
         description: 'to morando nesse album desde que conheci',
         url: '#',
         votes: 23,
-        cover: require('./assets/images/submissions/carnedoce.jpeg')
+        cover: require('./assets/images/covers/carnedoce.jpeg')
     },
     {
         id: 8,
@@ -60,6 +60,6 @@ export const albumslist = [{
         description: 'acolhedor',
         url: '#',
         votes: 23,
-        cover: require('./assets/images/submissions/atrasealem.jpg')
+        cover: require('./assets/images/covers/atrasealem.jpg')
     }
 ];
