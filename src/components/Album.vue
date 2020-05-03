@@ -12,7 +12,7 @@
           <div class="content">
             <p>
               <strong>
-                <a :href="album.url" class="has-text-info">{{ album.artist }}</a>
+                <a :href="album.url" target="_blank" class="has-text-info">{{ album.artist }}</a>
               </strong>
               <br>
                 {{ album.description }}
