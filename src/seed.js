@@ -63,4 +63,3 @@ export const albumslist = [{
         cover: require('./assets/images/submissions/atrasealem.jpg')
     }
 ];
-a
