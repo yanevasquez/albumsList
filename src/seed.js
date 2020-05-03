@@ -1,65 +1,73 @@
 export const albumslist = [{
         id: 1,
         artist: 'Moptop',
-        description: 'mopTOP',
+        description: 'Como se comportar',
         url: '#',
+        year: 2006,
         votes: 22,
-        cover: require('./assets/images/submissions/moptop.jpg')
+        cover: require('./assets/images/covers/moptop.jpg')
     },
     {
         id: 2,
         artist: 'Selvagens a procura de lei',
-        description: 'essa capa é um poster',
+        description: 'Aprendendo a mentir',
         url: '#',
-        votes: 15,
-        cover: require('./assets/images/submissions/sapdl.jpg')
+        year: 2011,
+        votes: 23,
+        cover: require('./assets/images/covers/sapdl.jpg')
     },
     {
         id: 3,
         artist: 'Dônica',
-        description: 'tranquilo',
+        description: 'Continuidade dos parques',
         url: '#',
-        votes: 14,
-        cover: require('./assets/images/submissions/donica.png')
+        year: 2015,
+        votes: 17,
+        cover: require('./assets/images/covers/donica.png')
     },
     {
         id: 4,
         artist: 'Balthazar',
-        description: 'indie massa',
+        description: 'Applause',
         url: '#',
-        votes: 17,
-        cover: require('./assets/images/submissions/balthazar.jpg')
+        year: 2010,
+        votes: 18,
+        cover: require('./assets/images/covers/balthazar.jpg')
     },
     {
         id: 5,
         artist: 'The Marías',
-        description: 'procurei um defeito e não achei',
+        description: 'Superclean Vol. I',
         url: '#',
-        votes: 16,
-        cover: require('./assets/images/submissions/themarias1.jpg')
+        year: 2017,
+        votes: 25,
+        cover: require('./assets/images/covers/themarias1.jpg')
     },
     {
         id: 6,
         artist: 'Madonna',
-        description: 'rainha, queridos',
+        description: 'Madonna',
         url: '#',
-        votes: 23,
-        cover: require('./assets/images/submissions/madonna.jpg')
+        year: 1982,
+        votes: 27,
+        cover: require('./assets/images/covers/madonna.jpg')
     },
     {
         id: 7,
         artist: 'Carne Doce',
-        description: 'to morando nesse album desde que conheci',
+        description: 'Tônus',
         url: '#',
-        votes: 23,
-        cover: require('./assets/images/submissions/carnedoce.jpeg')
+        year: 2014,
+        votes: 29,
+        cover: require('./assets/images/covers/carnedoce.jpeg')
     },
     {
         id: 8,
         artist: 'O terno',
-        description: 'acolhedor',
+        description: 'Atrás e além',
         url: '#',
-        votes: 23,
-        cover: require('./assets/images/submissions/atrasealem.jpg')
+        year: 2019,
+        votes: 24,
+        cover: require('./assets/images/covers/atrasealem.jpg')
     }
 ];
