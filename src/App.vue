@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-    <Album></Album>
+    <AlbumsList></AlbumsList>
   </div>
 </template>
 
 <script>
 
-import Album from './components/Album.vue'
+import AlbumsList from './components/AlbumsList.vue'
 
 export default {
   name: 'App',
   components: {
-    Album
+    AlbumsList
   }
 }
 </script>
