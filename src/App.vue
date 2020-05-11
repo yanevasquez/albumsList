@@ -5,15 +5,14 @@
 </template>
 
 <script>
-
-import AlbumsList from './components/AlbumsList.vue'
+import AlbumsList from "@/components/AlbumsList.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     AlbumsList
   }
-}
+};
 </script>
 
 
