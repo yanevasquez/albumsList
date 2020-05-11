@@ -5,13 +5,17 @@
     "scripts": {
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
-        "lint": "vue-cli-service lint"
+        "lint": "vue-cli-service lint",
+        "postinstall": "npm run build",
+        "start": "node server.js",
+        "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm run dev"
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.1.0",
         "axios": "^0.19.2",
         "bootstrap-vue": "^2.13.0",
         "core-js": "^3.6.4",
+        "express": "^4.17.1",
         "vue": "^2.6.11",
         "vuex": "^3.3.0"
     },

@@ -24,7 +24,7 @@
         <div class="media-right">
           <span class="computedVotes" v-on:click="updateVote(album.id)">
             <strong class="has-text-info">{{ album.votes }}
-              <img class='icone-star' src="../assets/images/icons/star.svg"></strong>
+              <img class='icone-star' src="../public/assets/images/icons/star.svg"></strong>
           </span>
         </div>
       </article>

@@ -29,7 +29,7 @@
           <span class="computedVotes">
             <strong class="has-text-info">
               {{ album.click }}
-              <img class="icone-star" src="../assets/images/icons/star.svg" />
+           
             </strong>
           </span>
         </div>
