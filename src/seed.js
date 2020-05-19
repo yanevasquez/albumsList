@@ -4,7 +4,7 @@ export const albumslist = [{
         description: 'Como se comportar',
         url: 'https://www.youtube.com/watch?v=0o0A8iBTtiQ&list=PLFsP3MFsLBbS_0xeqyMbf7y0QMK8vsDKb',
         year: 2006,
-        votes: 22,
+        votes: 24,
         cover: require('./assets/images/covers/moptop.jpg')
     },
     {
@@ -67,7 +67,16 @@ export const albumslist = [{
         description: 'Atrás/além',
         url: 'https://www.youtube.com/watch?v=fXqnVUekuNA&list=PLS6XDO2NfBSs2ZXQfMgrZXRL-poQR1YuG',
         year: 2019,
-        votes: 24,
+        votes: 22,
         cover: require('./assets/images/covers/atrasealem.jpg')
+    },
+    {
+        id: 9,
+        artist: 'Zé Ramalho',
+        description: 'Antologia acústica',
+        url: 'https://www.youtube.com/watch?v=fXqnVUekuNA&list=PLS6XDO2NfBSs2ZXQfMgrZXRL-poQR1YuG',
+        year: 1997,
+        votes: 25,
+        cover: require('./assets/images/covers/antologiaacustica.jpg')
     }
 ];

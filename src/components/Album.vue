@@ -1,11 +1,16 @@
 <template>
   <div id="app">
-    <h2 >Favorites albums: </h2>
+    <h2>Favorites albums:</h2>
     <div class="section">
-      <article v-for="album in sortedAlbums" :key="album.id" class="media" v-bind:class="{'border': album.votes >= 1}">
+      <article
+        v-for="album in sortedAlbums"
+        :key="album.id"
+        class="media"
+        v-bind:class="{'border': album.votes >= 1}"
+      >
         <figure class="media-left">
           <div class="card" style="width: 18rem;">
-            <img  class="card-img-top" :src="album.cover">
+            <img class="card-img-top" :src="album.cover" />
           </div>
         </figure>
         <div class="media-content">
@@ -14,17 +19,19 @@
               <strong>
                 <a :href="album.url" target="_blank" class="has-text-info">{{ album.artist }}</a>
               </strong>
-              <br>
-                {{ album.description }}
-                 <span class="tag is-small"> - {{ album.year }}</span>
-              <br>
-            </p>   
+              <br />
+              {{ album.description }}
+              <span class="tag is-small">- {{ album.year }}</span>
+              <br />
+            </p>
           </div>
         </div>
         <div class="media-right">
           <span class="computedVotes" v-on:click="updateVote(album.id)">
-            <strong class="has-text-info">{{ album.votes }}
-              <img class='icone-star' src="../public/assets/images/icons/star.svg"></strong>
+            <strong class="has-text-info">
+              {{ album.votes }}
+              <img class="icone-star" src="../assets/icons/star.svg" />
+            </strong>
           </span>
         </div>
       </article>
@@ -33,46 +40,44 @@
 </template>
 
 <script>
-
-import { albumslist } from '../seed';
+import { albumslist } from "../seed";
 
 export default {
-  name: 'Albums',
-  data () {
+  name: "Album",
+  data() {
     return {
       albumslist: albumslist
     };
   },
   computed: {
-    sortedAlbums () {
+    sortedAlbums() {
       return [...this.albumslist].sort((a, b) => {
         return b.votes - a.votes;
       });
     }
   },
   methods: {
-    updateVote (albumId) {
-      const album = this.albumslist.find((album) => {
+    updateVote(albumId) {
+      const album = this.albumslist.find(album => {
         return album.id === albumId;
       });
       album.votes++;
     }
   }
-}
+};
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Skranji&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Skranji&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap");
 
 h2 {
-  font-family: 'Bungee Shade', cursive;
-  font-family: 'Skranji', cursive;
+  font-family: "Bungee Shade", cursive;
+  font-family: "Skranji", cursive;
   text-align: center;
   margin-top: 60px;
-  font-size:  49px;
-  color:  #164f81
+  font-size: 49px;
+  color: #164f81;
 }
 
 article {
@@ -82,24 +87,24 @@ article {
 .section {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap:1rem;
+  grid-gap: 1rem;
   padding: 2rem 1.5rem;
-} 
+}
 
 .border {
-  border: 1px solid #3373dc4f !important;  
+  border: 1px solid #3373dc4f !important;
 }
 
 .icone-star {
-  height:40px;
+  height: 40px;
 }
 
-article .media .blue-border{
+article .media .blue-border {
   display: grid;
 }
 
 p {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   margin-left: 14px;
   margin-bottom: 1px;
   font-weight: 700;
@@ -112,7 +117,6 @@ a {
 .dividing-header {
   margin-top: 1em;
   margin-bottom: 2em;
-
 }
 .computedVotes {
   padding-left: 13rem;
@@ -128,8 +132,7 @@ a {
 
 strong {
   cursor: pointer;
-  font-family: 'Bungee Shade', cursive;
-  font-family: 'Skranji', cursive;
+  font-family: "Bungee Shade", cursive;
+  font-family: "Skranji", cursive;
 }
-
 </style>

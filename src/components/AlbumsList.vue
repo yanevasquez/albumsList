@@ -20,16 +20,17 @@
               </strong>
               <br />
               {{ album.name }}
-              <span class="tag is-small">- {{ album.year }}</span>
+              <span class="tag is-small"> - {{ album.year }}</span>
               <br />
             </p>
           </div>
         </div>
         <div class="media-right">
-          <span class="computedVotes">
-            <strong class="has-text-info">
-              {{ album.click }}
-           
+          <span  class="vote" @click.capture="teste" > 
+            {{albums.click}}
+  
+            <strong class="has-text-info">  {{ album.click }} 
+           <img class='icone-star' src="../assets/icons/star.svg">
             </strong>
           </span>
         </div>
@@ -42,12 +43,25 @@
 import { mapState } from "vuex";
 
 export default {
+
   computed: {
-    ...mapState("albums", ["albums"])
-  
+    ...mapState("albums", ["albums"]),
+
+  },
+  //methods: {
+  //  teste: function () {
+  //    return this.state.$store.albums
+  //    console.log( this.state.$store.albums)
+  //  }
+  //},
+  methods: {
+    teste (e) {
+      console.log(e.target) 
+    }
   },
   created() {
-    this.$store.dispatch("albums/loadAlbums");
+    this.$store.dispatch("albums/loadAlbums")
+   this.$store.dispatch("albums/addClick");
   }
 }
 

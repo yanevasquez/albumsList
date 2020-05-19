@@ -3,47 +3,49 @@ import axios from 'axios'
 const albums = {
 
     namespaced: true,
+
     state: {
         albums: [],
-        newAlbum: ''
-    },
+        nt: 'Madonna',
+        nn: 'Madonna'
 
+    },
     mutations: {
         SET_ALBUMS(state, data) {
             state.albums = data
         },
-        ADD_ALBUMS(state, data) {
-            state.albums.push(data)
+        SET(state, nt, nn) {
+            state.albums.title.push(nt),
+                state.albums.name.push(nn)
         }
     },
 
     actions: {
-        loadAlbums({ commit }) {
+        addClick({ commit, state }) {
+            const cliK = JSON.stringify({
+                title: state.nt,
+                name: state.nn
+            })
             axios
-                .get('http://191.252.204.71:8000/albums-list/')
+                .post('http://localhost:3000/albums-list/click', cliK)
                 .then(res => {
-                    commit('SET_ALBUMS', res.data)
-                })
-                .catch(error => console.log(error))
-        },
-        addAlbum({ commit, state }) {
-            if (!state.newAlbum) {
-                return 'okay'
-            }
-            const album = {
-                title: state.newAlbum,
-                name: state.newAlbum
-            }
-            axios
-                .post('http://191.252.204.71:8000/albums-list/click', album)
-                .then(res => {
-                    commit('ADD_ALBUMS', res.album)
+                    console.log(res.data),
+                        commit('SET', res.cliK)
                 })
                 .catch(error => {
-                    console.log(error.response)
+                    console.log(error.res)
                 })
-        }
-    }
-}
 
+        },
+        loadAlbums({ commit }) {
+            axios
+                .get('http://localhost:3000/albums-list/')
+                .then(res => {
+                    console.log(res.data),
+                        commit('SET_ALBUMS', res.data)
+                })
+                .catch(error => console.log(error))
+        }
+    },
+}
 export default albums
