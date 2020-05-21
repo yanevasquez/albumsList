@@ -74,9 +74,9 @@ export const albumslist = [{
         id: 9,
         artist: 'Zé Ramalho',
         description: 'Antologia acústica',
-        url: 'https://www.youtube.com/watch?v=fXqnVUekuNA&list=PLS6XDO2NfBSs2ZXQfMgrZXRL-poQR1YuG',
+        url: 'https://www.youtube.com/watch?v=TfRbxk7sKU0&list=PLHbMd9PBUiw3fDK5OpUjd8cZ_OArk3WOn',
         year: 1997,
         votes: 25,
         cover: require('./assets/images/covers/antologiaacustica.jpg')
-    }
-];
+    },
+]

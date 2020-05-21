@@ -1,72 +1,74 @@
 <template>
-  <div id="app">
-    <div class="section">
-      <article
-        v-for="album in sortedAlbums"
-        :key="album.id"
-        class="media"
-        v-bind:class="{'border': album.votes >= 25}"
-      >
+  <div class="cmp-search">
+    <h2>Albums List</h2>
+    <input
+      v-model="query"
+      id="query"
+      class="form-control"
+      placeholder="search for a band or singer"
+    />
+    <div class="display-search">
+      <div v-if="query==''" class="search"></div>
+      <aside v-else v-for="sortedAlbums in search" :key="sortedAlbums.id" class="media">
         <figure class="media-left">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" :src="album.cover" />
+          <div class="card" style="width: 10 rem;">
+            <img class="card-img-top" :src="sortedAlbums.cover" />
           </div>
         </figure>
         <div class="media-content">
           <div class="content">
             <p>
               <strong>
-                <a :href="album.url" target="_blank" class="has-text-info">{{album.artist}}</a>
+                <a
+                  :href="sortedAlbums.url"
+                  target="_blank"
+                  class="has-text-info"
+                >{{sortedAlbums.artist}}</a>
               </strong>
               <br />
-              {{ album.description }}
-              <span class="tag is-small">- {{ album.year }}</span>
+              {{ sortedAlbums.description }}
+              <span class="tag is-small">- {{ sortedAlbums.year }}</span>
               <br />
             </p>
           </div>
         </div>
         <div class="media-right">
-          <span class="computedVotes" @click.prevent="updateVote(album.id)">
+          <span class="computedVotes" @click.prevent="updateVote(sortedAlbums.id)">
             <strong class="has-text-info">
-              {{ album.votes }}
+              {{ sortedAlbums.votes }}
               <img class="icone-star" src="../assets/icons/star.svg" />
             </strong>
           </span>
         </div>
-      </article>
+      </aside>
     </div>
   </div>
 </template>
-
 <script>
 import { albumslist } from "../seed";
 
 export default {
   data() {
     return {
-      albumslist: albumslist
+      albumslist: albumslist,
+      query: ""
     };
   },
   computed: {
-    sortedAlbums() {
-      return [...this.albumslist].sort((a, b) => {
-        return b.votes - a.votes;
+    search() {
+      let query = this.query;
+      return this.albumslist.filter(function(albumslist) {
+        return albumslist.artist.includes(query);
       });
     }
   },
-  _methods: {
+  methods: {
     updateVote(albumId) {
       const album = this.albumslist.find(album => {
         return album.id === albumId;
       });
       album.votes++;
     }
-  },
-  get methods() {
-    return this._methods;
-  },
-  set methods(value) {
-    this._methods = value;
   }
 };
 </script>
@@ -85,20 +87,37 @@ h2 {
 }
 
 article {
+  display: contents;
+}
+img .card-img-top {
+  width: 10 rem;
+}
+.card-img-top {
+  border-radius: 50%;
+}
+.form-control {
+  width: 51rem;
+  margin-left: 17rem;
+}
+.content {
   display: grid;
 }
-
+.display-search {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
 .section {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 1rem;
   padding: 2rem 1.5rem;
 }
-.list-group {
-  display: GRID;
-  grid-template-columns: 1fr 1fr 1fr;
-  padding-left: 0;
-  margin-bottom: 0;
+.card {
+  width: 10rem;
+  border: white;
+}
+figure {
+  margin: 0px -10px 7px;
 }
 .border {
   border: 1px solid #3373dc4f !important;
@@ -114,9 +133,11 @@ article .media .blue-border {
 
 p {
   font-family: "Lato", sans-serif;
-  margin-left: 14px;
+  margin-left: 20px;
   margin-bottom: 1px;
-  font-weight: 700;
+  font-weight: 500;
+  margin-top: 2px;
+  margin-right: 19px;
 }
 
 a {
@@ -128,17 +149,22 @@ a {
   margin-bottom: 2em;
 }
 .computedVotes {
-  padding-left: 13rem;
+  padding-left: 9px;
 }
 
 .media {
-  max-width: 541px;
-  margin: 0 auto;
+  max-width: 22rem;
+  margin-top: 1rem;
+  margin-left: 48px;
+  margin-right: 1rem;
   border: 1px solid #e6e7e9;
   padding: -3em -11.5em -26.5em -19.5em;
-  border-radius: 7px;
+  border-radius: 72px 20px 39px 75px;
 }
-
+.media-right {
+  margin-top: 36px;
+  margin-right: 21px;
+}
 strong {
   cursor: pointer;
   font-family: "Bungee Shade", cursive;
