@@ -54,19 +54,13 @@ export default {
       });
     }
   },
-  _methods: {
+  methods: {
     updateVote(albumId) {
       const album = this.albumslist.find(album => {
         return album.id === albumId;
       });
       album.votes++;
     }
-  },
-  get methods() {
-    return this._methods;
-  },
-  set methods(value) {
-    this._methods = value;
   }
 };
 </script>
@@ -94,12 +88,20 @@ article {
   grid-gap: 1rem;
   padding: 2rem 1.5rem;
 }
+
+@media all and (max-width: 425px) {
+  .section {
+    grid-template-columns: 1fr;
+  }
+}
+
 .list-group {
-  display: GRID;
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   padding-left: 0;
   margin-bottom: 0;
 }
+
 .border {
   border: 1px solid #3373dc4f !important;
 }

@@ -95,17 +95,32 @@ img .card-img-top {
 .card-img-top {
   border-radius: 50%;
 }
+
 .form-control {
-  width: 51rem;
-  margin-left: 17rem;
+  width: 60%;
+  margin-left: 16rem;
+}
+
+@media all and (max-width: 425px) {
+  .form-control {
+    width: 21rem;
+    margin-left: 27px;
+  }
 }
 .content {
   display: grid;
 }
+
 .display-search {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
+@media all and (max-width: 425px) {
+  .display-search {
+    grid-template-columns: 1fr;
+  }
+}
+
 .section {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
