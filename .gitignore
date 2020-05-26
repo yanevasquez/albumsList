@@ -4,7 +4,9 @@ node_modules
 # local env files
 .env.local
 .env.*.local
+.browserslistrc.*.local
 .browserslistrc.local
+.eslintrc.*.local
 .eslintrc.local
 
 # Log files
