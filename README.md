@@ -12,7 +12,7 @@ $ git clone https://github.com/yanevasquez/albumsList
 ```
 #### 2. Building the **albumList-app** container 
 ```sh
-$ docker-compose up -d
+$ docker-compose up --build
 ```
  App running at `http://localhost:8081`
 
